@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Razgovor · креативы и формы</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F4F0;--surface:#fff;--surface-2:#EDECE6;--border:#DBD9D1;--line-2:#C7C4BA;
+--t1:#141817;--t2:#47504E;--t3:#77807D;--accent:#7C3AED;--accent-2:#A855F7;
+--ok:#0FA968;--warn:#E5920B;--bad:#E5484D;--shadow:0 2px 10px rgba(60,50,40,.05);--r:20px;
+--sans:"Manrope",ui-sans-serif,system-ui,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,monospace}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121514;--surface:#191D1C;--surface-2:#212625;
+--border:#2A302F;--line-2:#3A423F;--t1:#ECECE7;--t2:#B0B8B6;--t3:#828B88;--accent:#A78BFA;--accent-2:#C4B5FD;
+--ok:#3ECF8E;--warn:#F2B23E;--bad:#F26D71;--shadow:0 2px 12px rgba(0,0,0,.3)}}
+:root[data-theme="dark"]{--bg:#121514;--surface:#191D1C;--surface-2:#212625;--border:#2A302F;--line-2:#3A423F;
+--t1:#ECECE7;--t2:#B0B8B6;--t3:#828B88;--accent:#A78BFA;--accent-2:#C4B5FD;--ok:#3ECF8E;--warn:#F2B23E;--bad:#F26D71}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:16.5px;line-height:1.62}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px 90px}.mono{font-family:var(--mono)}
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.topbar-in{max-width:1040px;margin:0 auto;padding:11px 22px;display:flex;justify-content:space-between;gap:14px}
+.mark{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--t3)}
+header.hero{padding:54px 0 0}.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--t3)}
+h1{font-size:clamp(30px,4.8vw,46px);line-height:1.07;letter-spacing:-.03em;font-weight:800;margin:15px 0 0;max-width:22ch;text-wrap:balance}
+h1 .g{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{margin:18px 0 0;font-size:18px;color:var(--t2);max-width:66ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:13px;margin-top:30px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-family:var(--mono);font-size:25px;letter-spacing:-.02em}.kpi span{font-size:12.5px;color:var(--t3);display:block}
+.kpi.ok b{color:var(--ok)}.kpi.bad b{color:var(--bad)}
+section{margin-top:52px}.sec-head{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:baseline;border-top:2px solid var(--t1);padding-top:14px}
+@media(max-width:720px){.sec-head{grid-template-columns:1fr;gap:4px}}
+.sec-num{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--t3)}
+h2{font-size:clamp(21px,2.6vw,27px);line-height:1.2;letter-spacing:-.022em;font-weight:720;margin:0;text-wrap:balance}
+h3{font-size:17.5px;font-weight:700;margin:28px 0 8px}p{margin:14px 0;max-width:70ch}
+.scroller{overflow-x:auto;margin:18px 0;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:660px}
+th,td{text-align:right;padding:11px 13px;border-bottom:1px solid var(--border);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}tbody tr:last-child td{border-bottom:0}
+thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);font-weight:500;background:var(--surface-2)}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr.best td{background:color-mix(in srgb,var(--ok) 10%,transparent)}tr.worst td{background:color-mix(in srgb,var(--bad) 10%,transparent)}
+.callout{margin-top:26px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow)}
+.callout.green{border-left-color:var(--ok)}.callout.red{border-left-color:var(--bad)}
+.callout p:first-child{margin-top:0}.callout p:last-child{margin-bottom:0}
+ul{margin:12px 0;padding-left:20px;max-width:70ch}li{margin:8px 0;color:var(--t2)}li b{color:var(--t1)}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--border);font-size:13px;color:var(--t3)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px;font-weight:500}
+.t-off{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad)}.t-up{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.t-on{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}.t-keep{background:var(--surface-2);color:var(--t2)}.t-wait{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+td.why{white-space:normal;text-align:left;color:var(--t2);font-size:13.5px;min-width:260px}.muted{color:var(--t3)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}.card h3{margin:0 0 6px}
+.card p{margin:6px 0;font-size:15px;color:var(--t2)}.big{font-family:var(--mono);font-size:28px;font-weight:500;letter-spacing:-.02em}
+ol{max-width:72ch;padding-left:22px}ol li{margin:10px 0;color:var(--t2)}ol li b{color:var(--t1)}
+</style></head><body>
+<div class="topbar"><div class="topbar-in"><span class="mark">Razgovor.uz · 29 sentabr 2026</span><span class="mark">Meta Ads × Bitrix24</span></div></div>
+<div class="wrap">
+<header class="hero">
+<div class="eyebrow">Решения по креативам и формам · план на 29 сентября</div>
+<h1>Выключаем 4 ролика, включаем aprel 4, <span class="g">деньги — блогеру и aprel 5</span></h1>
+<p class="lede">Разобрал каждый ролик за последние 2 дня и неделю и сверил каждую заявку с Bitrix по телефону. 7 936 из 8 004 заявок нашлись в CRM. Решения принимаю по цене <b>оплаты</b>, а не по цене заявки: разница между ними бывает пятикратной.</p>
+<div class="kpis">
+<div class="kpi"><b class="mono">$408</b><span>расход 27–28.09</span></div>
+<div class="kpi"><b class="mono">525</b><span>заявок за 2 дня</span></div>
+<div class="kpi"><b class="mono">$0.78</b><span>цена заявки</span></div>
+<div class="kpi ok"><b class="mono">$27</b><span>цена оплаты, 1–21.09</span></div>
+<div class="kpi"><b class="mono">2,9%</b><span>заявка → оплата</span></div>
+<div class="kpi bad"><b class="mono">64%</b><span>зрелых заявок не продвинулись дальше «Qayta Abrabotka»</span></div>
+</div></header>
+
+<section><div class="sec-head"><div class="sec-num">01 · Решения</div><h2>Что выключаем, что включаем, куда переносим бюджет</h2></div>
+<p>Колонки «2 дня» и «неделя» показывают свежую картину. Последняя колонка — цена оплаты по заявкам 1–21 сентября, у которых было 7 дней дойти до оплаты. <b>Тёплые</b> — заявки, которые уже дошли до «Tasdiqlanganlar», предоплаты, 50/50 или проверки лимита. Это ранний сигнал, пока оплаты не созрели.</p>
+<div class="scroller"><table style="min-width:1250px">
+<thead><tr><th>Ролик</th><th>Решение</th><th>Расход 2 дн</th><th>Заявка 2 дн</th><th>Расход 7 дн</th><th>Заявок</th><th>Заявка</th><th>CTR</th><th>Мусор</th><th>Тёплые</th><th>Оплат</th><th>Цена оплаты · сент</th><th style="text-align:left">Почему</th></tr></thead>
+<tbody><tr class='best'><td><b>aprel 5</b></td><td><span class='tag t-up'>добавить бюджет</span></td><td class=num>$55</td><td class=num>$1.01</td><td class=num>$240</td><td class=num>247</td><td class=num>$0.97</td><td class=num>0.49%</td><td class=num>12%</td><td class=num>22%</td><td class=num>10</td><td class=num><b>$16</b></td><td class=why>Лучший ролик кабинета третий месяц подряд: $16 за оплату в сентябре, 22% заявок недели уже дошли до «Tasdiqlangan» и дальше — выше всех.</td></tr><tr class='best'><td><b>Blogger B zahod3</b></td><td><span class='tag t-up'>добавить бюджет</span></td><td class=num>$14</td><td class=num>$0.28</td><td class=num>$34</td><td class=num>126</td><td class=num>$0.27</td><td class=num>0.73%</td><td class=num>6%</td><td class=num>18%</td><td class=num>5</td><td class=num><b>—</b></td><td class=why>Самая дешёвая оплата недели: 5 оплат на $34. Мусор 6% — ниже всех в кабинете.</td></tr><tr class='best'><td><b>Blogger C Project24</b></td><td><span class='tag t-up'>добавить бюджет</span></td><td class=num>$13</td><td class=num>$0.21</td><td class=num>$33</td><td class=num>172</td><td class=num>$0.19</td><td class=num>0.66%</td><td class=num>13%</td><td class=num>17%</td><td class=num>1</td><td class=num><b>—</b></td><td class=why>Самая дешёвая заявка ($0.19) и 17% тёплых. Одна оплата — когорта ещё дозревает.</td></tr><tr class='best'><td><b>Blogger A zahod2</b></td><td><span class='tag t-up'>добавить бюджет</span></td><td class=num>$13</td><td class=num>$0.31</td><td class=num>$32</td><td class=num>127</td><td class=num>$0.26</td><td class=num>0.52%</td><td class=num>17%</td><td class=num>12%</td><td class=num>2</td><td class=num><b>—</b></td><td class=why>$0.26 за заявку, 2 оплаты на $32.</td></tr><tr class='best'><td><b>aprel 4</b></td><td><span class='tag t-on'>включить</span></td><td class=num>$0</td><td class=num>—</td><td class=num>$0</td><td class=num>0</td><td class=num>—</td><td class=num>—</td><td class=num>—</td><td class=num>—</td><td class=num>0</td><td class=num><b>$28</b></td><td class=why>Выключен 17.09, хотя в сентябре дал 20 оплат по $28 — дешевле кабинета в среднем. Включаем в обеих группах Aprel ABO.</td></tr><tr class=''><td><b>iyun new c4</b></td><td><span class='tag t-keep'>оставить</span></td><td class=num>$51</td><td class=num>$1.18</td><td class=num>$175</td><td class=num>118</td><td class=num>$1.48</td><td class=num>0.38%</td><td class=num>14%</td><td class=num>17%</td><td class=num>4</td><td class=num><b>$51</b></td><td class=why>Заявка дорогая ($1.48), но конверсия в оплату 3,5% — клиент выходит в $44. Держим без изменений.</td></tr><tr class=''><td><b>sentabr 12</b></td><td><span class='tag t-keep'>оставить</span></td><td class=num>$10</td><td class=num>$0.69</td><td class=num>$32</td><td class=num>35</td><td class=num>$0.90</td><td class=num>0.54%</td><td class=num>17%</td><td class=num>31%</td><td class=num>1</td><td class=num><b>—</b></td><td class=why>Мало данных ($32), но 31% тёплых — лучший ранний сигнал среди сентябрьских роликов.</td></tr><tr class=''><td><b>sentabr 5</b></td><td><span class='tag t-wait'>решить 1.10</span></td><td class=num>$11</td><td class=num>$0.77</td><td class=num>$111</td><td class=num>142</td><td class=num>$0.78</td><td class=num>0.24%</td><td class=num>17%</td><td class=num>16%</td><td class=num>2</td><td class=num><b>—</b></td><td class=why>$0.78 за заявку, 2 оплаты на $111. Решение — когда когорта дозреет.</td></tr><tr class=''><td><b>aprel 2</b></td><td><span class='tag t-wait'>решить 1.10</span></td><td class=num>$82</td><td class=num>$0.93</td><td class=num>$252</td><td class=num>266</td><td class=num>$0.95</td><td class=num>0.52%</td><td class=num>16%</td><td class=num>12%</td><td class=num>1</td><td class=num><b>$21</b></td><td class=why>В сентябре $21 за оплату, но на этой неделе 1 оплата на 266 заявок. Не выключаем по сырой когорте — смотрим 1 октября.</td></tr><tr class=''><td><b>k2 8 forma</b></td><td><span class='tag t-wait'>решить 1.10</span></td><td class=num>$85</td><td class=num>$1.06</td><td class=num>$285</td><td class=num>310</td><td class=num>$0.92</td><td class=num>0.26%</td><td class=num>14%</td><td class=num>11%</td><td class=num>3</td><td class=num><b>$28</b></td><td class=why>CTR упал с 0.39% до 0.26% за три недели — ролик выгорает. Убираем из теста новой формы, в остальных группах решаем 1 октября.</td></tr><tr class='worst'><td><b>aprel 3</b></td><td><span class='tag t-off'>выключить</span></td><td class=num>$16</td><td class=num>$1.15</td><td class=num>$87</td><td class=num>86</td><td class=num>$1.01</td><td class=num>0.32%</td><td class=num>16%</td><td class=num>14%</td><td class=num>0</td><td class=num><b>$31</b></td><td class=why>0 оплат на 85 заявок недели, до менеджера дошла только половина. За 16–26.09 — $68 за оплату, вдвое дороже среднего.</td></tr><tr class='worst'><td><b>Blogger D Target4</b></td><td><span class='tag t-off'>выключить</span></td><td class=num>$13</td><td class=num>$0.50</td><td class=num>$33</td><td class=num>69</td><td class=num>$0.48</td><td class=num>0.42%</td><td class=num>19%</td><td class=num>10%</td><td class=num>0</td><td class=num><b>—</b></td><td class=why>Самый слабый из четырёх роликов блогера: заявка вдвое дороже ($0.48), CTR ниже, мусор 19%, 0 оплат из 69.</td></tr><tr class='worst'><td><b>sentabr 22</b></td><td><span class='tag t-off'>выключить</span></td><td class=num>$36</td><td class=num>$1.50</td><td class=num>$38</td><td class=num>27</td><td class=num>$1.42</td><td class=num>0.40%</td><td class=num>7%</td><td class=num>4%</td><td class=num>0</td><td class=num><b>—</b></td><td class=why>$1.42 за заявку и 4% тёплых — худший ранний сигнал из новых роликов.</td></tr><tr class='worst'><td><b>k20</b></td><td><span class='tag t-off'>выключить</span></td><td class=num>$5</td><td class=num>$1.57</td><td class=num>$13</td><td class=num>11</td><td class=num>$1.21</td><td class=num>0.44%</td><td class=num>36%</td><td class=num>0%</td><td class=num>0</td><td class=num><b>$29</b></td><td class=why>Meta сама почти перестала его показывать ($13 за неделю), а из того, что пришло, 36% — мусор. Выключение ничего не теряет и оставляет бюджет CBO сильным роликам.</td></tr></tbody></table></div>
+<p class="muted">Один и тот же ролик часто крутится под разными именами: например, «aprel 7» в CBO — это видео aprel 5. Поэтому строки склеены по видео, а не по названию объявления.</p>
+
+<h3>Перенос бюджета — в пределах +20% в день, чтобы не сбить обучение</h3>
+<div class="grid2">
+<div class="card"><h3>Освобождается ≈ $37/день</h3>
+<p>• Кампания «Sentabr test yangi forma 16.09» — <b>$29</b>. Ставим на паузу целиком: тест собран неправильно, подробности ниже.</p>
+<p>• Группа Blogger D Target4 — <b>$8</b>.</p>
+<p>• aprel 3, k20 и sentabr 22 выключаем внутри групп. Бюджет групп не меняется: деньги сами уходят на соседние ролики, в первую очередь на aprel 5.</p></div>
+<div class="card"><h3>Куда идёт</h3>
+<p>• Blogger A, B, C: <b>$8 → $10</b> каждый (+$6).</p>
+<p>• Aprel ABO «uzb business» (здесь aprel 5 и aprel 4): <b>$36 → $43</b> (+$7).</p>
+<p>• Aprel ABO «uzb broad» (сюда возвращается aprel 4): <b>$22 → $26</b> (+$4).</p>
+<p>• ≈ <b>$20</b> — на тесты из раздела 04.</p></div>
+</div>
+<div class="callout"><p><b>Общий бюджет не растёт</b> — около $219 в день, как сейчас. Меняем только, куда идут деньги. Правка текста объявления сбрасывает обучение, поэтому текстовые изменения вносим в новые объявления, а не в работающие.</p></div>
+</section>
+
+<section><div class="sec-head"><div class="sec-num">02 · Новая форма</div><h2>Форма не хуже — кампанию с ней собрали неправильно</h2></div>
+<p>Жахонгир прав, что новую форму «не так использовали». С 16 по 26.09 на форме с одним полем телефона и экраном подтверждения номера оплата стоила <b>$52</b>, на старых — <b>$39</b>. Выглядит как провал формы, но если сравнить <b>один и тот же ролик</b>, картина обратная:</p>
+<div class="scroller"><table>
+<thead><tr><th>16–26 сентября</th><th>Расход</th><th>Заявок</th><th>CTR</th><th>Мусор</th><th>Оплат</th><th>Цена оплаты</th></tr></thead>
+<tbody>
+<tr class="best"><td>k2 8 forma · <b>новая</b> форма</td><td class=num>$220</td><td class=num>271</td><td class=num>0.19%</td><td class=num>15%</td><td class=num>4</td><td class=num><b>$55</b></td></tr>
+<tr class="worst"><td>k2 8 forma · старая форма</td><td class=num>$298</td><td class=num>319</td><td class=num>0.29%</td><td class=num>18%</td><td class=num>3</td><td class=num><b>$99</b></td></tr>
+<tr class="best"><td>Блогер · новая форма с одним телефоном</td><td class=num>$78</td><td class=num>338</td><td class=num>0.64%</td><td class=num>16%</td><td class=num>6</td><td class=num><b>$13</b></td></tr>
+</tbody></table></div>
+<p>Три ошибки теста:</p>
+<ol>
+<li><b>На новую форму поставили самый слабый ролик.</b> k2 8 forma как раз выгорает, его CTR упал с 0.39% до 0.26%. Лучший ролик, aprel 5, тоже стоял на новой форме, но в той же группе, и Meta не дала ему ни доллара: за 12 дней $0.</li>
+<li><b>Отдельная группа «UZ broad 18+» с CTR 0.19%</b> — вдвое ниже, чем у тех же роликов в старых группах. Разница в аудитории, а не в анкете.</li>
+<li><b>27.09 все объявления перевели на формы «v2»</b>, а в них снова <b>два поля телефона</b>. То есть от новой формы откатились, хотя с блогером она дала лучший результат в кабинете.</li>
+</ol>
+<div class="callout green"><p><b>Что делаем:</b> возвращаем блогера на формы с одним телефоном (v1 ещё активны), а новую форму проверяем честно. Один ролик, две одинаковые группы, только форма разная — тест 1 в разделе 04.</p></div>
+</section>
+
+<section><div class="sec-head"><div class="sec-num">03 · Анализ заявок</div><h2>Кто из заявок платит, а кто нет</h2></div>
+<p>6 185 заявок за 20.08–21.09 (им больше 7 дней), 166 оплат, конверсия 2,7%. Сравнил ответы в форме и время заявки с тем, дошёл ли человек до оплаты.</p>
+<div class="grid2">
+<div class="card"><h3>Возраст 16–18 — почти не платит</h3><div class="big" style="color:var(--bad)">0,58%</div><p>4 оплаты на 690 заявок. У 26–30 лет — 3,9%, у 30+ — 3,3%. Реклама настроена на 18+, но в старых формах 19–21% людей выбирают «16–18»: так под Forma 1 и Forma 8. В новой форме такого варианта нет.</p></div>
+<div class="card"><h3>Два разных номера в заявке — вдвое хуже</h3><div class="big" style="color:var(--bad)">1,5% vs 2,9%</div><p>В 17% заявок человек ввёл один номер, а в профиле Facebook другой. У таких заявок мусор 39% против 21%. Лечится одним полем телефона.</p></div>
+<div class="card"><h3>«Был на курсах, без толку» — лучший сегмент</h3><div class="big" style="color:var(--ok)">4,0%</div><p>Против 2,6% у остальных ответов на вопрос о главной проблеме. Готовый угол для нового ролика: «уже пробовал — не получилось; у нас получится, потому что…»</p></div>
+<div class="card"><h3>Вопрос «когда начнёте» ничего не предсказывает</h3><div class="big">2,5–3,1%</div><p>«С завтра» платит не лучше, чем «когда понравится». Вопрос занимает место в форме и ничего не даёт. Лучше спрашивать про формат оплаты: сразу или в рассрочку.</p></div>
+</div>
+<div class="callout red"><p><b>Главное узкое место — не реклама.</b> Из зрелых заявок до менеджера дальше «Yangi lid» или «Qayta Abrabotka» продвинулись только <b>36%</b>. Из всех сентябрьских заявок <b>2 783 из 5 573</b> лежат в «Qayta Abrabotka». Ночные заявки (00–07) платят хуже, 2,0%, — их первыми нужно обзванивать утром. Любые деньги на рекламу упираются в то, сколько заявок отдел успевает обработать.</p></div>
+</section>
+
+<section><div class="sec-head"><div class="sec-num">04 · Тесты</div><h2>Что запускаем на тест</h2></div>
+<ol>
+<li><b>Форма A/B, честно.</b> aprel 5 в двух одинаковых группах 18+ по $10/день: старая форма (Forma 5) против формы с одним телефоном. 7 дней, решение по цене оплаты.</li>
+<li><b>Блогер — новые дубли по схеме zahod B.</b> Лучший захват недели — B. Просим у блогера 3–4 новых варианта начала ролика. Каждый в отдельной группе по $8: только так Meta даёт открутку новым роликам. Эта схема уже сработала на тесте блогера.</li>
+<li><b>sentabr 3-3, 4-1 и 6 — в отдельные группы.</b> Сейчас они стоят в одной группе с sentabr 5 и получили $0. Это не провал роликов — их просто не показывали.</li>
+<li><b>Новый угол «уже пробовал курсы»</b> — сегмент с конверсией 4%. Ролик в формате блогера: улица, телефон, без студии.</li>
+<li><b>«100% onlayn» в тексте.</b> Ни в одном из 42 активных объявлений слова «onlayn» в тексте нет. Добавляем строку «100% onlayn — O'zbekistonning istalgan viloyatidan» <b>в новые объявления</b> из тестов 1–3, чтобы не сбить обучение работающих.</li>
+</ol>
+<div class="callout"><p><b>Когда подводим итоги.</b> 1 октября дозревает когорта блогера, тогда решаем по aprel 2, k2 8 forma и sentabr 5. 6 октября — итог A/B теста формы. Автоправила по цене заявки не включаем: они выключили бы именно блогера и aprel 5. Вместо этого раз в неделю бот будет присылать в Telegram кандидатов на отключение с ценой оплаты, а решение остаётся за людьми.</p></div>
+</section>
+
+<section><div class="sec-head"><div class="sec-num">05 · Методика</div><h2>Как считалось</h2></div>
+<ul>
+<li><b>Источники:</b> Meta Marketing API (расход, показы, клики, заявки по объявлениям) и выгрузка заявок напрямую из лид-форм. Каждая заявка сверена с Bitrix24 по <b>обоим</b> номерам телефона, нашлось 7 936 из 8 004. Кампании найма исключены.</li>
+<li><b>Цена оплаты</b> — расход и заявки за <b>одно и то же окно</b>, оплаты только по заявкам старше 7 дней. В утреннем отчёте по формам расход, судя по всему, брался за весь месяц, а оплаты только по зрелым заявкам, поэтому, например, Forma 1 выглядела на $113. Здесь окно одно, и Forma 1 выходит на $35.</li>
+<li><b>Оплата</b> — стадия «100% To'lov». <b>Мусор</b> — «Sifatsiz lid». <b>Тёплые</b> — «Tasdiqlanganlar», «Predoplata», «50\50», «Limitni korib beradigan Konban» и оплата.</li>
+<li><b>Данных мало:</b> заявкам блогера 4 дня, у sentabr-роликов по 1–2 оплаты. Решения по ним помечены «решить 1.10».</li>
+</ul>
+</section>
+<footer>Подготовлено 28 сентября 2026 · кабинет Razgovor uz · Meta Ads × Bitrix24</footer>
+</div></body></html>
